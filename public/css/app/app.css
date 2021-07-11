@@ -1,0 +1,651 @@
+.Administrators_table .table_filters {
+  width: 100%;
+  height: 50px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+}
+.Administrators_table .table_filters .table_filters form {
+  display: flex;
+}
+.Administrators_table .table_filters .table_filters form input {
+  background-color: white;
+}
+
+.Administrators_table thead tr th:nth-child(1) {
+  width: 3%;
+}
+
+.Administrators_table thead tr th:nth-child(2) {
+  width: 6%;
+}
+
+.Administrators_table tbody td:nth-child(4) {
+  text-align: center;
+  width: 160px;
+}
+
+.Administrators_table tbody td:nth-child(5) {
+  text-align: center;
+  width: 160px;
+}
+
+.Administrators_table tbody tr {
+  margin: 0;
+  padding: 0;
+}
+.Administrators_table tbody tr td:last-of-type {
+  width: 200px;
+}
+.Administrators_table tbody tr td:last-of-type ul {
+  margin: 0;
+  height: 30px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  align-content: center;
+  justify-content: center;
+}
+.Administrators_table tbody tr td:last-of-type ul li {
+  margin: 0 5px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.Administrators_table tbody tr td:last-of-type ul li a {
+  padding: 2px 5px;
+  color: white;
+  text-decoration: none;
+}
+.Administrators_table tbody tr td:last-of-type ul li:nth-child(1) {
+  background-color: #2DB2E3;
+}
+.Administrators_table tbody tr td:last-of-type ul li:nth-child(2) {
+  background-color: red;
+}
+
+.Administrators_filter_bar .select_field {
+  width: 600px;
+  height: 100%;
+  display: flex;
+}
+.Administrators_filter_bar .select_field label {
+  width: auto;
+  line-height: 50px;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-right: 10px;
+}
+
+.button_field_Administrators ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px;
+  padding-left: 5px;
+}
+.button_field_Administrators ul li {
+  width: 160px;
+  height: 40px;
+  margin-top: 5px;
+  text-align: center;
+}
+.button_field_Administrators ul li a {
+  padding: 10px 20px;
+  background-color: #3dc845;
+  line-height: 40px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.Entries_table .table_filters {
+  width: 100%;
+  height: 50px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+}
+.Entries_table .table_filters .table_filters form {
+  display: flex;
+}
+.Entries_table .table_filters .table_filters form input {
+  background-color: white;
+}
+
+.Entries_table thead tr th:nth-child(1) {
+  width: 3%;
+}
+
+.Entries_table thead tr th:nth-child(2) {
+  width: 20%;
+}
+
+.Entries_table thead tr th:nth-child(3) {
+  width: 25%;
+}
+.Entries_table thead tr th:nth-child(3) p {
+  padding: 0;
+  margin: 0;
+}
+
+.Entries_table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+.Entries_table thead th:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+.Entries_table tbody tr {
+  margin: 0;
+  padding: 0;
+}
+.Entries_table tbody tr td:last-of-type {
+  width: 150px;
+}
+.Entries_table tbody tr td:last-of-type ul {
+  margin: 0;
+  height: 30px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  align-content: center;
+  justify-content: center;
+}
+.Entries_table tbody tr td:last-of-type ul li {
+  margin: 0 5px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.Entries_table tbody tr td:last-of-type ul li a {
+  padding: 2px 5px;
+  color: white;
+  text-decoration: none;
+}
+.Entries_table tbody tr td:last-of-type ul li:nth-child(1) {
+  background-color: #2DB2E3;
+}
+.Entries_table tbody tr td:last-of-type ul li:nth-child(2) {
+  background-color: red;
+}
+
+.Entries_filter_bar .select_field {
+  width: 600px;
+  height: 100%;
+  display: flex;
+}
+.Entries_filter_bar .select_field label {
+  width: auto;
+  line-height: 50px;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-right: 10px;
+}
+
+.button_field_Entries ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px;
+  padding-left: 5px;
+}
+.button_field_Entries ul li {
+  width: 160px;
+  height: 40px;
+  margin-top: 5px;
+  text-align: center;
+}
+.button_field_Entries ul li a {
+  padding: 10px 20px;
+  background-color: #3dc845;
+  line-height: 40px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.hospital_table .table_filters {
+  width: 100%;
+  height: 50px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+}
+.hospital_table .table_filters .table_filters form {
+  display: flex;
+}
+.hospital_table .table_filters .table_filters form input {
+  background-color: white;
+}
+
+.hospital_table thead tr th:nth-child(4) {
+  text-align: center;
+}
+
+.hospital_table thead tr th:nth-child(5) {
+  text-align: center;
+}
+
+.hospital_table tbody tr {
+  margin: 0;
+  padding: 0;
+}
+.hospital_table tbody tr td:last-of-type {
+  width: 150px;
+}
+.hospital_table tbody tr td:last-of-type ul {
+  width: 120px;
+  margin: 0;
+  height: 30px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  align-content: center;
+  justify-content: center;
+}
+.hospital_table tbody tr td:last-of-type ul li {
+  margin: 0 5px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.hospital_table tbody tr td:last-of-type ul li a {
+  padding: 2px 5px;
+  color: white;
+  text-decoration: none;
+}
+.hospital_table tbody tr td:last-of-type ul li:nth-child(1) {
+  background-color: #2DB2E3;
+}
+.hospital_table tbody tr td:last-of-type ul li:nth-child(2) {
+  background-color: orange;
+}
+.hospital_table tbody tr td:last-of-type ul li:nth-child(3) {
+  background-color: red;
+}
+
+.button_field_hospital ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px;
+  padding-left: 5px;
+}
+.button_field_hospital ul li {
+  width: 120px;
+  height: 40px;
+  margin-top: 5px;
+  text-align: center;
+}
+.button_field_hospital ul li a {
+  padding: 10px 20px;
+  background-color: #3dc845;
+  line-height: 40px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #2DB2E3;
+  color: white;
+  padding-left: 20px;
+  display: flex;
+}
+
+nav p {
+  font-size: 1.8em;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  line-height: 60px;
+}
+
+.body_layout {
+  width: 90%;
+  margin: auto;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body_layout .section1 {
+  flex: 7;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.body_layout .section2 {
+  flex: 3;
+  height: 100%;
+  background-color: green;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #2DB2E3;
+  color: white;
+  padding-left: 20px;
+}
+
+nav p {
+  font-size: 1.8em;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  line-height: 60px;
+}
+
+.body_layout {
+  width: 90%;
+  margin: auto;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body_layout .section1 {
+  flex: 7;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.body_layout .section2 {
+  flex: 3;
+  height: 100%;
+  background-color: green;
+}
+
+.action_bar {
+  width: 95%;
+  padding-top: 20px;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(40px, auto);
+  grid-column-gap: 10px;
+}
+
+.action_bar button {
+  background-color: #2DB2E3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.action_bar:button:nth-child(1) {
+  grid-column: 1/3;
+}
+
+.entries_form {
+  margin: auto;
+  width: 95%;
+  margin-bottom: 30px;
+}
+
+.entries_form form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.entries_form form > div {
+  width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 6px grey;
+  padding-bottom: 30px;
+}
+
+.entries_form form > div h4 {
+  width: 100%;
+  height: 50px;
+  background-color: #2DB2E3;
+  color: white;
+  line-height: 50px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.entries_form form > div .input_elem_holder {
+  width: 100%;
+  padding: 0 30px;
+  margin-bottom: 10px;
+}
+
+.entries_form form > div .input_elem_holder * {
+  vertical-align: top;
+}
+
+.entries_form form > div .input_elem_holder h6 {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #707070;
+  grid-column: 1/4;
+}
+
+.entries_form form > div .input_elem_holder .form-group label {
+  width: 100%;
+}
+
+.entries_form form > div .input_elem_holder .form-group textarea {
+  height: 100px;
+  border: 1px solid #ced4da;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.entries_form form .sub_form_1 {
+  width: 66%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.entries_form form .sub_form_2 {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 30%;
+}
+
+.grid-elem-3 {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-elem-2 {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sub_navigation {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.sub_navigation > ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.sub_navigation > ul li {
+  height: 40px;
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.sub_navigation > ul li a {
+  height: 100%;
+  width: 100%;
+  display: block;
+  line-height: 40px;
+  text-decoration: none;
+  color: #2DB2E3;
+  font-size: large;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.filter_bar {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(40px, auto);
+  margin-bottom: 20px;
+}
+
+.filter_bar h5 {
+  grid-column: 1/4;
+  font-size: 1.5em;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+.filter_bar .button_field {
+  grid-column: 11/13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter_bar .button_field button {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2DB2E3;
+  color: white;
+  font-weight: 600;
+}
+
+.hospital_table .table_filters {
+  width: 100%;
+  height: 50px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+}
+
+.hospital_table .table_filters form {
+  display: flex;
+}
+
+.hospital_table .table_filters form input {
+  background-color: white;
+}
+
+.hospital_table thead tr th:nth-child(1) {
+  width: 5%;
+}
+
+.hospital_table thead tr th:nth-child(2) {
+  width: 13%;
+}
+
+.hospital_table thead tr th:nth-child(3) {
+  width: 26%;
+}
+
+.hospital_table thead tr th:nth-child(4) {
+  width: 20%;
+  text-align: center;
+}
+
+.hospital_table thead tr > th:last-child {
+  width: 11%;
+}
+
+.hospital_table tbody tr td:nth-child(4) {
+  text-align: center;
+}
+
+.hospital_table tbody tr > td:nth-child(6) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hospital_table tbody tr > td:nth-child(6) div {
+  width: 35px;
+  height: 40px;
+  padding-top: 3px;
+}
+
+.hospital_table tbody tr > td:nth-child(6) div img {
+  width: 35px;
+  display: block;
+}
+
+.filter_bar {
+  display: flex;
+}
+.filter_bar .select_field {
+  width: 400px;
+  height: 100%;
+  display: flex;
+}
+.filter_bar .select_field label {
+  width: 210px;
+  line-height: 50px;
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-right: 10px;
+}
+.filter_bar .button_field_hospital {
+  width: calc(100% - 400px);
+  display: grid;
+}
+
+.action_bar a {
+  width: 90px;
+  text-align: center;
+  line-height: 40px;
+  height: 100%;
+  color: #4c4c4c;
+}
+
+nav {
+  justify-content: space-between;
+}
+nav form {
+  justify-self: flex-end;
+  margin-right: 20px;
+  align-self: center;
+}
+nav form button {
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  width: 120px;
+  font-weight: 600;
+  color: #2DB2E3;
+}

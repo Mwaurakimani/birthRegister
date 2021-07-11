@@ -1,0 +1,62 @@
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #2DB2E3;
+  color: white;
+  padding-left: 20px;
+}
+
+nav p {
+  font-size: 1.8em;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  line-height: 60px;
+}
+
+.body_layout {
+  width: 90%;
+  margin: auto;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body_layout .section1 {
+  flex: 7;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.body_layout .section2 {
+  flex: 3;
+  height: 100%;
+  background-color: green;
+}
+
+body > h3 {
+  width: 350px;
+  text-align: center;
+  color: #707070;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.form_holder {
+  width: 530px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 6px grey;
+}
+
+.form_holder .form-group {
+  margin: 20px 0px;
+}
+
+.form_holder button {
+  display: block;
+  margin: auto;
+}

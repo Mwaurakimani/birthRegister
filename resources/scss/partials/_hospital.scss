@@ -1,0 +1,106 @@
+
+
+.hospital_table .table_filters {
+    width: 100%;
+    height: 50px;
+    background-color: #d4d4d4;
+    margin-bottom: 10px;
+    & .table_filters form {
+        display: flex;
+        & input {
+            background-color: white;
+        }
+    }
+}
+
+.hospital_table{
+    td{
+    }
+}
+
+
+.hospital_table thead tr th:nth-child(1) {
+}
+
+.hospital_table thead tr th:nth-child(2) {
+}
+
+.hospital_table thead tr th:nth-child(3) {
+}
+
+.hospital_table thead tr th:nth-child(4) {
+    text-align: center;
+}
+.hospital_table thead tr th:nth-child(5) {
+    text-align: center;
+}
+.hospital_table tbody tr{
+    margin: 0;
+    padding: 0;
+    td:last-of-type{
+        width: 150px;
+        & ul{
+            width: 120px;
+            margin: 0;
+            height: 30px;
+            display: flex;
+            list-style: none;
+            padding: 0;
+            align-content: center;
+            justify-content: center;
+            li{
+                margin: 0 5px;
+                overflow: hidden;
+                border-radius: 3px;
+                a {
+                    padding: 2px 5px;
+                    color: white;
+                    text-decoration: none;
+
+                }
+                &:nth-child(1){
+                    background-color: #2DB2E3;
+                }
+                &:nth-child(2){
+                    background-color: orange;
+                }
+                &:nth-child(3){
+                    background-color: red;
+                }
+            }
+        }
+    }
+}
+
+.hospital_filter_bar{
+}
+
+.button_field_hospital{
+    ul{
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-gap: 5px;
+        padding-left: 5px;
+        li{
+            width: 120px;
+            height: 40px;
+            margin-top:5px;
+            text-align: center;
+            a{
+                padding: 10px 20px;
+                background-color: #3dc845;
+                line-height: 40px;
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+

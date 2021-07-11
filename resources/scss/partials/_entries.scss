@@ -1,0 +1,124 @@
+
+
+.Entries_table .table_filters {
+    width: 100%;
+    height: 50px;
+    background-color: #d4d4d4;
+    margin-bottom: 10px;
+    & .table_filters form {
+        display: flex;
+        & input {
+            background-color: white;
+        }
+    }
+}
+
+.Entries_table{
+    td{
+    }
+}
+
+
+.Entries_table thead tr th:nth-child(1) {
+    width: 3%;
+}
+
+.Entries_table thead tr th:nth-child(2) {
+    width: 20%;
+}
+
+.Entries_table thead tr th:nth-child(3) {
+    width: 25%;
+    & p{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+.Entries_table tbody td:nth-child(5) {
+    text-align: center;
+}
+.Entries_table thead th:nth-child(6) {
+    width: 150px;
+    text-align: center;
+}
+.Entries_table tbody tr{
+    margin: 0;
+    padding: 0;
+    td:last-of-type{
+        width:150px;
+        & ul{
+            margin: 0;
+            height: 30px;
+            display: flex;
+            list-style: none;
+            padding: 0;
+            align-content: center;
+            justify-content: center;
+            li{
+                margin: 0 5px;
+                overflow: hidden;
+                border-radius: 3px;
+
+                a {
+                    padding: 2px 5px;
+                    color: white;
+                    text-decoration: none;
+
+                }
+                &:nth-child(1){
+                    background-color: #2DB2E3;
+                }
+                &:nth-child(2){
+                    background-color: red;
+                }
+            }
+        }
+    }
+}
+
+.Entries_filter_bar{
+    .select_field {
+        width: 600px;
+        height: 100%;
+        display: flex;
+        label {
+            width: auto;
+            line-height: 50px;
+            font-weight: 600;
+            font-size: 1.3em;
+            margin-right: 10px;
+        }
+    }
+}
+
+.button_field_Entries{
+    ul{
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-gap: 5px;
+        padding-left: 5px;
+        li{
+            width: 160px;
+            height: 40px;
+            margin-top:5px;
+            text-align: center;
+            a{
+                padding: 10px 20px;
+                background-color: #3dc845;
+                line-height: 40px;
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+

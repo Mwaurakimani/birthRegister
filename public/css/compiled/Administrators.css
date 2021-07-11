@@ -1,0 +1,167 @@
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #2DB2E3;
+  color: white;
+  padding-left: 20px;
+}
+
+nav p {
+  font-size: 1.8em;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  line-height: 60px;
+}
+
+.body_layout {
+  width: 90%;
+  margin: auto;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body_layout .section1 {
+  flex: 7;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.body_layout .section2 {
+  flex: 3;
+  height: 100%;
+  background-color: green;
+}
+
+.sub_navigation {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.sub_navigation > ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.sub_navigation > ul li {
+  height: 40px;
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.sub_navigation > ul li a {
+  height: 100%;
+  width: 100%;
+  display: block;
+  line-height: 40px;
+  text-decoration: none;
+  color: #2DB2E3;
+  font-size: large;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.sub_navigation > ul li:nth-child(4) {
+  border-bottom: 2px solid #2DB2E3;
+}
+
+.filter_bar {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(40px, auto);
+  margin-bottom: 20px;
+}
+
+.filter_bar h5 {
+  grid-column: 1/4;
+  font-size: 1.5em;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+.filter_bar .button_field {
+  grid-column: 11/13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter_bar .button_field button {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2DB2E3;
+  color: white;
+  font-weight: 600;
+}
+
+.hospital_table .table_filters {
+  width: 100%;
+  height: 50px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+}
+
+.hospital_table .table_filters form {
+  display: flex;
+}
+
+.hospital_table .table_filters form input {
+  background-color: white;
+}
+
+.hospital_table thead tr th:nth-child(1) {
+  width: 5%;
+}
+
+.hospital_table thead tr th:nth-child(2) {
+  width: 13%;
+}
+
+.hospital_table thead tr th:nth-child(3) {
+  width: 26%;
+}
+
+.hospital_table thead tr th:nth-child(4) {
+  width: 20%;
+  text-align: center;
+}
+
+.hospital_table thead tr > th:last-child {
+  width: 11%;
+}
+
+.hospital_table tbody tr td:nth-child(4) {
+  text-align: center;
+}
+
+.hospital_table tbody tr > td:nth-child(6) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hospital_table tbody tr > td:nth-child(6) div {
+  width: 35px;
+  height: 40px;
+  padding-top: 3px;
+}
+
+.hospital_table tbody tr > td:nth-child(6) div img {
+  width: 35px;
+  display: block;
+}
