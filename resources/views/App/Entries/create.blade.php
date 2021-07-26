@@ -144,22 +144,8 @@
             </div>
             <div class="sub_form_2">
                 <h4>Sub Details</h4>
-                <div class="input_elem_holder">
-                    <div class="form-group">
-                        <label for="updated_at">Created at</label>
-                        <input type="text"
-                               class="form-control"
-                               >
-                    </div>
-                </div>
-                <div class="input_elem_holder">
-                    <div class="form-group">
-                        <label for="updated_at">Modified at</label>
-                        <input type="text"
-                               class="form-control"
-                               >
-                    </div>
-                </div>
+
+
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="hospital">Registered hospital</label>
