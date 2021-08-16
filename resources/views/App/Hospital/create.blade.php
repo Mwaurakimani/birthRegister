@@ -76,6 +76,23 @@
                 <h4>Sub Details</h4>
                 <div class="input_elem_holder">
                     <div class="form-group">
+                        <label for="Created_at">Created at</label>
+                        <input type="text"
+                               class="form-control"
+                               name="Created_at"
+                               >
+                    </div>
+                </div>
+                <div class="input_elem_holder">
+                    <div class="form-group">
+                        <label for="Modified_at">Modified at</label>
+                        <input type="text"
+                               class="form-control"
+                               name="Modified_at" >
+                    </div>
+                </div>
+                <div class="input_elem_holder">
+                    <div class="form-group">
                         <label for="Notes">Notes</label>
                         <textarea name="Notes"></textarea>
                     </div>
