@@ -163,6 +163,12 @@ nav p {
 .entries_form form .sub_form_2 {
     height: fit-content;
     width: 30%;
+    select{
+        width: 100%;
+        padding: 6px 12px;
+        border-radius: 5px;
+        border:solid 1px #ced4da;
+    }
 }
 
 .grid-elem-3 {
@@ -175,6 +181,12 @@ nav p {
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: repeat(2, 1fr);
+    select{
+        width: 100%;
+        padding: 6px 12px;
+        border-radius: 5px;
+        border:solid 1px #ced4da;
+    }
 }
 
 .sub_navigation {

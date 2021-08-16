@@ -2,6 +2,9 @@
     'page_title'=>"Entries",
     'custom_css'=>"Entries.css"
 ])
+@php
+    $hospitals = \App\Models\Hospital::all();
+@endphp
 
 
 @section('content')
@@ -11,8 +14,6 @@
 
     <div class="action_bar">
         <a href="/Entries" >Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(235, 151, 41);">Update
-        </button>
     </div>
 
     <div class="entries_form">
@@ -166,7 +167,7 @@
                         <label for="hospital">Registered hospital</label>
                         <input type="text"
                                class="form-control"
-                               name="hospital" value="{{ $Entries->hospital ? $Entries->hospital->Name : "" }}">
+                               name="updated_at" value="{{ $Entries->hospital ? $Entries->Hospital->Name : "" }}">
                     </div>
                 </div>
             </div>

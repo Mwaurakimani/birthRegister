@@ -3,6 +3,11 @@
     'custom_css'=>"Entries.css"
 ])
 
+@php
+    $hospitals = \App\Models\Hospital::all();
+    //$hospitals = array();
+
+@endphp
 
 @section('content')
     <x-content-heading :name="'Dashboard'"/>
@@ -10,7 +15,7 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Entries" >Back</a>
+        <a href="/Entries">Back</a>
         <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">create
         </button>
     </div>
@@ -40,21 +45,21 @@
                         <input type="text"
                                class="form-control"
                                name="childFirstName"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="childMiddleName">Middle Name</label>
                         <input type="text"
                                class="form-control"
                                name="childMiddleName"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="childLastNam">Last Name</label>
                         <input type="text"
                                class="form-control"
                                name="childLastNam"
-                               >
+                        >
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-3">
@@ -64,21 +69,21 @@
                         <input type="text"
                                class="form-control"
                                name="motherFirstName"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="motherMiddleName">Middle Name</label>
                         <input type="text"
                                class="form-control"
                                name="motherMiddleName"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="motherLastName">Last Name</label>
                         <input type="text"
                                class="form-control"
                                name="motherLastName"
-                               >
+                        >
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-3">
@@ -88,46 +93,47 @@
                         <input type="text"
                                class="form-control"
                                name="fatherFirstName"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="fatherMiddleName">Middle Name</label>
                         <input type="text"
                                class="form-control"
                                name="fatherMiddleName"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="fatherLastName">Last Name</label>
                         <input type="text"
                                class="form-control"
                                name="fatherLastName"
-                               >
+                        >
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-2" style="margin-top: 30px">
                     <div class="form-group">
                         <label for="dateOfBirth">Date Of Birth</label>
-                        <input type="text"
+                        <input type="date"
                                class="form-control"
                                name="dateOfBirth"
-                               >
+                        >
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <input type="text"
-                               class="form-control"
-                               name="gender"
-                               >
+                        <select name="gender" id="">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-2" style="margin-top: 30px">
                     <div class="form-group">
                         <label for="typeOfBirth">Type Of Birth</label>
-                        <input type="text"
-                               class="form-control"
-                               name="typeOfBirth"
-                               >
+                        <select name="typeOfBirth" id="">
+                            <option value="Normal">Normal</option>
+                            <option value="Twins">Twins</option>
+                            <option value="Triplets">Triplets</option>
+                        </select>
                     </div>
 
                 </div>
@@ -137,7 +143,7 @@
                         <input type="text"
                                class="form-control"
                                name="natureOfBirth"
-                               >
+                        >
                     </div>
                 </div>
 
@@ -149,10 +155,14 @@
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="hospital">Registered hospital</label>
-                        <input type="text"
-                               class="form-control"
-                               name="hospital"
-                               >
+                        <select name="hospital" id="">
+                            <option value="0">None</option>
+                            @if(isset($hospitals) && count($hospitals) > 0)
+                                @foreach($hospitals as $hospital)
+                                    <option value="{{ $hospital->id }}"> {{ $hospital->Name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
                     </div>
                 </div>
             </div>

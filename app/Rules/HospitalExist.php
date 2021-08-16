@@ -26,7 +26,7 @@ class HospitalExist implements Rule
      */
     public function passes($attribute, $value)
     {
-        $hospital = Hospital::where('name',$value)->get();
+        $hospital = Hospital::where('id',$value)->get();
         $return = $hospital->count() ? true : false;
 
         return $return;

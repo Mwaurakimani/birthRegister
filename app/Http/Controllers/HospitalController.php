@@ -55,6 +55,8 @@ class HospitalController extends Controller
         $hospital->Region = $validated['Region'];
         $hospital->SubRegion = $validated['SubRegion'];
 
+        dd($hospital);
+
         $hospital->save();
 
 

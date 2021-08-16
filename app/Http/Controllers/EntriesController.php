@@ -107,9 +107,10 @@ class EntriesController extends Controller
      */
     public function edit($id)
     {
+
         $Entries = entry::find($id);
 
-        return view('App.Entries.edit')->with('Entries',$Entries);
+        return view('App.Entries.edit')->with('Entry',$Entries);
     }
 
     /**
@@ -158,9 +159,9 @@ class EntriesController extends Controller
 //        dd("done");
         $entries->save();
 
-        Session::flash("message","Hospital record was updated successfully!");
+        Session::flash("message","Record was updated successfully!");
 
-        return redirect('/Entries/'.$id);
+        return redirect('/Entries/'.$id.'/edit');
     }
 
     /**

@@ -3,6 +3,9 @@
 @import 'partials/entries';
 @import 'partials/hospital';
 @import 'partials/formEntry';
+
+@import "partials/dashboard";
+
 .filter_bar{
     display: flex;
     .select_field {

@@ -21,7 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('/Dashboard', function () {
-    return view('dashboard');
+    $records = \App\Models\entry::all();
+
+    return view('dashboard')->with([
+        'records' => $records
+    ]);
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('Hospital', HospitalController::class)->middleware(['auth']);

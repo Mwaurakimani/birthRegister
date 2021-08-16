@@ -465,6 +465,12 @@ nav p {
   height: fit-content;
   width: 30%;
 }
+.entries_form form .sub_form_2 select {
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: solid 1px #ced4da;
+}
 
 .grid-elem-3 {
   display: grid;
@@ -476,6 +482,12 @@ nav p {
   display: grid;
   grid-column-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
+}
+.grid-elem-2 select {
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: solid 1px #ced4da;
 }
 
 .sub_navigation {
@@ -603,6 +615,36 @@ nav p {
 .hospital_table tbody tr > td:nth-child(6) div img {
   width: 35px;
   display: block;
+}
+
+.dashboard_table_view {
+  width: 96%;
+  margin: auto;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 0 6px grey;
+  border-radius: 5px;
+  padding: 10px;
+}
+.dashboard_table_view table {
+  border-radius: 5px;
+}
+.dashboard_table_view table tbody tr {
+  height: auto;
+}
+.dashboard_table_view table tbody tr td {
+  height: auto;
+}
+.dashboard_table_view table tbody tr:hover {
+  cursor: pointer;
+  background-color: #2DB2E3;
+  color: white;
+}
+.dashboard_table_view > p {
+  width: 100%;
+  font-size: 2.4em;
+  text-align: center;
+  padding: 20px;
 }
 
 .filter_bar {

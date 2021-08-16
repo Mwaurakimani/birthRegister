@@ -11,7 +11,7 @@ class entry extends Model
     use HasFactory;
 
     public function sethospitalIdAttribute($value){
-        $hospital = Hospital::where('name',$value)->firstOrFail();
+        $hospital = Hospital::where('id',$value)->firstOrFail();
         $id = $hospital->id;
         $this->attributes['hospital_id'] = $id;
     }

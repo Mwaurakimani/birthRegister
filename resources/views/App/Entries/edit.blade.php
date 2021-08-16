@@ -3,6 +3,11 @@
     'custom_css'=>"Entries.css"
 ])
 
+@php
+    $hospitals = \App\Models\Hospital::all();
+    //$hospitals = array();
+
+@endphp
 
 @section('content')
     <x-content-heading :name="'Dashboard'"/>
@@ -10,8 +15,8 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Entries" >Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">create
+        <a href="/Entries">Back</a>
+        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">Update
         </button>
     </div>
 
@@ -29,7 +34,8 @@
                 @endforeach
             </div>
         @endif
-        <form action="/Entries/{{$Entries->id}}" id="birthEntry" method="POST">
+        <form action="/Entries/{{$Entry->id}}" id="birthEntry" method="POST">
+            @method('PUT')
             @csrf
             <div class="sub_form_1">
                 <h4>Entries Records</h4>
@@ -40,21 +46,25 @@
                         <input type="text"
                                class="form-control"
                                name="childFirstName"
-                               value="{{ $Entries->childFirstName ? $Entries->childFirstName : "t" }}">
+                               value="{{ $Entry->childFirstName }}"
+                        >
                     </div>
                     <div class="form-group">
                         <label for="childMiddleName">Middle Name</label>
                         <input type="text"
                                class="form-control"
                                name="childMiddleName"
-                               value="{{ $Entries->childMiddleName ? $Entries->childMiddleName : "" }}">
+                               value="{{ $Entry->childMiddleName }}"
+                        >
                     </div>
                     <div class="form-group">
                         <label for="childLastNam">Last Name</label>
                         <input type="text"
                                class="form-control"
                                name="childLastNam"
-                               value="{{ $Entries->childLastNam ? $Entries->childLastNam : "" }}">
+                               value="{{ $Entry->childLastNam }}"
+
+                        >
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-3">
@@ -64,21 +74,27 @@
                         <input type="text"
                                class="form-control"
                                name="motherFirstName"
-                               value="{{ $Entries->motherFirstName ? $Entries->motherFirstName : "" }}">
+                               value="{{ $Entry->motherFirstName }}"
+
+                        >
                     </div>
                     <div class="form-group">
                         <label for="motherMiddleName">Middle Name</label>
                         <input type="text"
                                class="form-control"
                                name="motherMiddleName"
-                               value="{{ $Entries->motherMiddleName ? $Entries->motherMiddleName : "" }}">
+                               value="{{ $Entry->motherMiddleName }}"
+
+                        >
                     </div>
                     <div class="form-group">
                         <label for="motherLastName">Last Name</label>
                         <input type="text"
                                class="form-control"
                                name="motherLastName"
-                               value="{{ $Entries->motherLastName ? $Entries->motherLastName : "" }}">
+                               value="{{ $Entry->motherLastName }}"
+
+                        >
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-3">
@@ -88,46 +104,59 @@
                         <input type="text"
                                class="form-control"
                                name="fatherFirstName"
-                               value="{{ $Entries->fatherFirstName ? $Entries->fatherFirstName : "" }}">
+                               value="{{ $Entry->fatherFirstName }}"
+
+                        >
                     </div>
                     <div class="form-group">
                         <label for="fatherMiddleName">Middle Name</label>
                         <input type="text"
                                class="form-control"
                                name="fatherMiddleName"
-                               value="{{ $Entries->fatherMiddleName ? $Entries->fatherMiddleName : "" }}">
+                               value="{{ $Entry->fatherMiddleName }}"
+
+                        >
                     </div>
                     <div class="form-group">
                         <label for="fatherLastName">Last Name</label>
                         <input type="text"
                                class="form-control"
                                name="fatherLastName"
-                               value="{{ $Entries->fatherLastName ? $Entries->fatherLastName : "" }}">
+                               value="{{ $Entry->fatherLastName }}"
+
+                        >
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-2" style="margin-top: 30px">
                     <div class="form-group">
                         <label for="dateOfBirth">Date Of Birth</label>
-                        <input type="text"
+                        <input type="date"
                                class="form-control"
                                name="dateOfBirth"
-                               value="{{ $Entries->dateOfBirth ? $Entries->dateOfBirth : "" }}">
+                               value="{{ $Entry->dateOfBirth }}"
+
+                        >
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <input type="text"
-                               class="form-control"
-                               name="gender"
-                               value="{{ $Entries->gender ? $Entries->gender : "" }}">
+                        @php
+                            $gender_options = ['Male','Female'];
+                            $gender_selected = $Entry->gender;
+                        @endphp
+
+                        <x-App.Elem.selecte-elem :name="__('gender')" :options="$gender_options" :selected="$gender_selected">
+                        </x-App.Elem.selecte-elem>
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-2" style="margin-top: 30px">
                     <div class="form-group">
                         <label for="typeOfBirth">Type Of Birth</label>
-                        <input type="text"
-                               class="form-control"
-                               name="typeOfBirth"
-                               value="{{ $Entries->typeOfBirth ? $Entries->typeOfBirth : "" }}">
+                        @php
+                            $typeOfBirth_options = ['Normal','Twins','Triplets'];
+                            $typeOfBirth_selected = $Entry->typeOfBirth;
+                        @endphp
+                        <x-App.Elem.selecte-elem :name="__('typeOfBirth')" :options="$typeOfBirth_options" :selected="$typeOfBirth_selected">
+                        </x-App.Elem.selecte-elem>
                     </div>
 
                 </div>
@@ -137,35 +166,27 @@
                         <input type="text"
                                class="form-control"
                                name="natureOfBirth"
-                               value="{{ $Entries->natureOfBirth ? $Entries->natureOfBirth : "" }}">
+                               value="{{ $Entry->childFirstName }}"
+                        >
                     </div>
                 </div>
 
             </div>
             <div class="sub_form_2">
                 <h4>Sub Details</h4>
-                <div class="input_elem_holder">
-                    <div class="form-group">
-                        <label for="updated_at">Created at</label>
-                        <input type="text"
-                               class="form-control"
-                               name="updated_at" value="{{ $Entries->updated_at ? $Entries->updated_at : "" }}">
-                    </div>
-                </div>
-                <div class="input_elem_holder">
-                    <div class="form-group">
-                        <label for="updated_at">Modified at</label>
-                        <input type="text"
-                               class="form-control"
-                               name="updated_at" value="{{ $Entries->updated_at ? $Entries->updated_at : "" }}">
-                    </div>
-                </div>
+
+
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="hospital">Registered hospital</label>
-                        <input type="text"
-                               class="form-control"
-                               name="hospital" value="{{ $Entries->hospital ? $Entries->hospital->Name : "" }}">
+                        <select name="hospital" id="">
+                            <option value="0">None</option>
+                            @if(isset($hospitals) && count($hospitals) > 0)
+                                @foreach($hospitals as $hospital)
+                                    <option value="{{ $hospital->id }}" {{ $hospital->id == $Entry->hospital_id ? "selected" : '' }}> {{ $hospital->Name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
                     </div>
                 </div>
             </div>

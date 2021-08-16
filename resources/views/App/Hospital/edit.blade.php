@@ -79,7 +79,7 @@
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="Created_at">Created at</label>
-                        <input type="text"
+                        <input type="text"w
                                class="form-control"
                                name="Created_at"
                                value="{{ $hospital->created_at ? $hospital->created_at : "" }}">

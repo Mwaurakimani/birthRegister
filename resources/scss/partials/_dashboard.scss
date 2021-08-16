@@ -1,0 +1,31 @@
+.dashboard_table_view{
+    width: 96%;
+    margin: auto;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 0 6px grey;
+    border-radius: 5px;
+    padding: 10px;
+    table{
+        border-radius: 5px;
+        tbody{
+            tr{
+                height: auto;
+                td{
+                    height: auto;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background-color: #2DB2E3;
+                    color: white;
+                }
+            }
+        }
+    }
+    &>p{
+        width: 100%;
+        font-size: 2.4em;
+        text-align: center;
+        padding: 20px;
+    }
+}
