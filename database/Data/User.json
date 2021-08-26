@@ -1,0 +1,16 @@
+[
+    {
+        "firstName" : "Admin",
+        "lastName" :"Admin",
+        "email" :"admin@gmail.com",
+        "password" : "password",
+        "Title" :"Registrar"
+    },
+    {
+        "firstName" : "Peter",
+        "lastName" :"Kimani",
+        "email" :"mwaura@gmail.com",
+        "password" : "password",
+        "Title" :"Admin"
+    }
+]

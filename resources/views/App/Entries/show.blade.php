@@ -14,6 +14,7 @@
 
     <div class="action_bar">
         <a href="/Entries" >Back</a>
+        <a href="/entriesPrint/{{ $Entries->id }}" >Print View</a>
     </div>
 
     <div class="entries_form">

@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function entries(){
         return $this->hasMany(entry::class);
     }
+
+    public function hospital(){
+        return $this->hasMany(Hospital::class);
+    }
 }

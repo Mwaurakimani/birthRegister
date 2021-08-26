@@ -1,3 +1,73 @@
+#filter_button{
+    align-self: center;
+    justify-self: center;
+    grid-column: 11/12;
+    width: 130px;
+    height: 40px;
+    border: none;
+    background-color: #2DB2E3;
+    color: white;
+    font-weight: bolder;
+    border-radius:20px;
+}
+
+.dashboard_filter{
+    width: 100%;
+    background-color: #cfcfcf;
+    margin-bottom: 10px;
+    height: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all ease-in 250ms;
+    .filter_panel{
+        border-radius: 5px;
+        box-shadow: 0 0 6px grey;
+        width: 90%;
+        background-color: white;
+        margin: auto;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 5px;
+        .input_elem{
+            padding: 10px;
+            width: 250px;
+            label{
+                display: block;
+            }
+            input,select{
+                width: 200px;
+                border-radius: 5px;
+                outline: none;
+                border: 1px solid grey;
+                padding: 5px;
+            }
+        }
+    }
+
+    .action-button{
+        width: 250px;
+        height: 50px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        button{
+            background-color: #06aade;
+            color: white;
+            border: none;
+            height: 35px;
+            border-radius: 5px;
+            width: 100px;
+            &:hover{
+                background-color: #2DB2E3;
+                box-shadow: 0 2px 3px grey;
+            }
+        }
+    }
+}
+
+
 .dashboard_table_view{
     width: 96%;
     margin: auto;

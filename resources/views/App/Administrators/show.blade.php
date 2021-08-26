@@ -3,6 +3,10 @@
     'custom_css'=>"Administrators.css"
 ])
 
+@php
+    $hospitals = \App\Models\Hospital::all();
+
+@endphp
 
 @section('content')
     <x-content-heading :name="'Dashboard'"/>
@@ -10,9 +14,7 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Administrators" >Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(235, 151, 41);">Update
-        </button>
+        <a href="/Administrators">Back</a>
     </div>
 
     <div class="entries_form">
@@ -66,7 +68,7 @@
                         <input type="text"
                                class="form-control"
                                name="Role"
-                               value="{{ $Administrators->Role ? $Administrators->Role : "" }}">
+                               value="{{ $Administrators->Title ? $Administrators->Title : "" }}">
                     </div>
                 </div>
                 <div class="input_elem_holder">
@@ -84,7 +86,8 @@
                         <label for="Modified_at">Created at</label>
                         <input type="text"
                                class="form-control"
-                               name="Modified_at" value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
+                               name="Modified_at"
+                               value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
                     </div>
                 </div>
                 <div class="input_elem_holder">
@@ -92,15 +95,16 @@
                         <label for="Modified_at">Modified at</label>
                         <input type="text"
                                class="form-control"
-                               name="Modified_at" value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
+                               name="Modified_at"
+                               value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
                     </div>
                 </div>
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="Notes">Registered hospital</label>
-                        <input type="text"
-                               class="form-control"
-                               name="Modified_at" value="{{ $Administrators->hospital ? $Administrators->hospital : "" }}">
+                        <select name="hospital_id" id="">
+                            <option>{{ \App\Models\Hospital::find($Administrators->hospital_id)->Name }}</option>
+                        </select>
                     </div>
                 </div>
             </div>

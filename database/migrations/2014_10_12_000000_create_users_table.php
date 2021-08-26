@@ -17,10 +17,11 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('firstName');
             $table->string('lastName');
+            $table->unsignedBigInteger('hospital_id')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('Role');
-            $table->mediumText('Notes');
+            $table->string('Title')->default('Admin');
+            $table->mediumText('Notes')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

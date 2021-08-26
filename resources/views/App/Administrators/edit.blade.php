@@ -11,7 +11,9 @@
 
     <div class="action_bar">
         <a href="/Administrators" >Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(235,41,41);">Delete
+        <button type="submit" form="userInput" value="submit" style="background-color: rgb(235, 151, 41);">Update
+        </button>
+        <button type="submit" form="userInput" value="submit" style="background-color: rgb(235,41,41);">Delete
         </button>
     </div>
 
@@ -29,8 +31,8 @@
                 @endforeach
             </div>
         @endif
-        <form action="/Administrators/{{$Administrators->id}}" id="birthEntry" method="POST">
-            @method('Delete')
+        <form action="/Administrator/{{$Administrators->id}}" id="userInput" method="POST">
+            @method('PUT')
             @csrf
             <div class="sub_form_1">
                 <h4>Administrators Records</h4>
@@ -66,7 +68,7 @@
                         <input type="text"
                                class="form-control"
                                name="Role"
-                               value="{{ $Administrators->Role ? $Administrators->Role : "" }}">
+                               value="{{ $Administrators->Title ? $Administrators->Title : "" }}">
                     </div>
                 </div>
                 <div class="input_elem_holder">
@@ -98,9 +100,13 @@
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="Notes">Registered hospital</label>
-                        <input type="text"
-                               class="form-control"
-                               name="Modified_at" value="{{ $Administrators->hospital ? $Administrators->hospital : "" }}">
+                        <select name="hospital_id" id="">
+                            <option value="">None</option>
+                            @forelse ($hospitals as $hospital)
+                                <option value="{{ $hospital->id }}" {{ isset($Administrators->hospital_id) && $Administrators->hospital_id == $hospital->id ? 'selected' : '' }}>{{ $hospital->Name }}</option>
+                            @empty
+                            @endforelse
+                        </select>
                     </div>
                 </div>
             </div>

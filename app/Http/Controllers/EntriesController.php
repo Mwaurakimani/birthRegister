@@ -18,9 +18,13 @@ class EntriesController extends Controller
      */
     public function index()
     {
-        $entries = entry::all();
+        if (Auth::user()->Title == 'Registrar') {
+            $entries = entry::all();
+        } else {
+            $entries = entry::where('user_id', Auth::user()->id)->get();
+        }
 
-        return view('App.Entries.index')->with('entries',$entries);
+        return view('App.Entries.index')->with('entries', $entries);
     }
 
     /**
@@ -36,7 +40,7 @@ class EntriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -55,7 +59,7 @@ class EntriesController extends Controller
             'gender' => 'required',
             'typeOfBirth' => 'required',
             'natureOfBirth' => 'required',
-            'hospital' => ['required',new HospitalExist],
+            'hospital' => ['required', new HospitalExist],
         ]);
 
         $entries = new entry();
@@ -80,7 +84,7 @@ class EntriesController extends Controller
 //        dd($entries->hospital_id);
         $entries->save();
 
-        Session::flash("message","Hospital record was updated successfully!");
+        Session::flash("message", "Hospital record was updated successfully!");
 
         return redirect('/Entries');
     }
@@ -88,7 +92,7 @@ class EntriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -96,13 +100,13 @@ class EntriesController extends Controller
 
         $Entries = entry::find($id);
 
-        return view('App.Entries.show')->with('Entries',$Entries);
+        return view('App.Entries.show')->with('Entries', $Entries);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -110,14 +114,14 @@ class EntriesController extends Controller
 
         $Entries = entry::find($id);
 
-        return view('App.Entries.edit')->with('Entry',$Entries);
+        return view('App.Entries.edit')->with('Entry', $Entries);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -136,7 +140,7 @@ class EntriesController extends Controller
             'gender' => 'required',
             'typeOfBirth' => 'required',
             'natureOfBirth' => 'required',
-            'hospital' => ['required',new HospitalExist],
+            'hospital' => ['required', new HospitalExist],
         ]);
 
         $entries = entry::find($id);
@@ -159,15 +163,15 @@ class EntriesController extends Controller
 //        dd("done");
         $entries->save();
 
-        Session::flash("message","Record was updated successfully!");
+        Session::flash("message", "Record was updated successfully!");
 
-        return redirect('/Entries/'.$id.'/edit');
+        return redirect('/Entries/' . $id . '/edit');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

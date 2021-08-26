@@ -16,7 +16,7 @@
     </div>
     <div class="button_field_Administrators">
         <ul>
-            <li style="grid-column: 8/9;" ><a href="/Administrators/create">Create</a></li>
+            <li style="grid-column: 8/9;" ><a href="/Administrator/create">Create</a></li>
         </ul>
     </div>
 </form>
@@ -55,8 +55,8 @@
                         <td>{{ $Administrators->created_at }}</td>
                         <td>
                             <ul>
-                                <li><a href="/Administrators/{{$Administrators->id}}">View/edit</a></li>
-                                <li><a href="/Administrators/{{$Administrators->id}}/edit">Delete</a></li>
+                                <li><a href="/Administrator/{{$Administrators->id}}/edit">View/edit</a></li>
+                                <li><a href="/Administrator/{{$Administrators->id}}/edit">Delete</a></li>
                             </ul>
                         </td>
                     </tr>

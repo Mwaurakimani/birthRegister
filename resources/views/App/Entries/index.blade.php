@@ -30,7 +30,7 @@
 
         <div class="section1 Entries_table">
 
-            @if(empty($entries->all()))
+            @if(empty($entries))
                 <p>No records were found</p>
             @else
                 <table class="table table-sm table-striped table-hover ">

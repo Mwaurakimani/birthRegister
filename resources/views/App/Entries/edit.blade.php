@@ -16,8 +16,6 @@
 
     <div class="action_bar">
         <a href="/Entries">Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">Update
-        </button>
     </div>
 
     <div class="entries_form">

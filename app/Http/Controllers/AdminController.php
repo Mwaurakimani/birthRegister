@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Session;
 use Illuminate\Http\Request;
 
@@ -51,7 +52,7 @@ class AdminController extends Controller
         $user->firstName = $validated["firstName"];
         $user->lastName = $validated["lastName"];
         $user->email = $validated["email"];
-        $user->Role = $validated["Role"];
+        $user->Title = $validated["Role"];
         $user->Notes = $validated["Notes"];
         $user->password = bcrypt("password");
 
@@ -59,7 +60,7 @@ class AdminController extends Controller
 
         Session::flash("message","User record was added successfully!");
 
-        return redirect('/Administrators');
+        return redirect('/Administrator');
 
 
     }
@@ -72,9 +73,13 @@ class AdminController extends Controller
      */
     public function show($id)
     {
+        $hospitals = \App\Models\Hospital::all();
         $Administrators = User::find($id);
 
-        return view('App.Administrators.show')->with('Administrators',$Administrators);
+        return view('App.Administrators.show')->with([
+            'Administrators'=>$Administrators,
+            'hospitals' => $hospitals
+        ]);
     }
 
     /**
@@ -85,9 +90,13 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
+        $hospitals = \App\Models\Hospital::all();
         $Administrators = User::find($id);
 
-        return view('App.Administrators.edit')->with('Administrators',$Administrators);
+        return view('App.Administrators.edit')->with([
+            'Administrators'=>$Administrators,
+            'hospitals' => $hospitals
+        ]);
     }
 
     /**
@@ -112,14 +121,16 @@ class AdminController extends Controller
         $user->firstName = $validated["firstName"];
         $user->lastName = $validated["lastName"];
         $user->email = $validated["email"];
-        $user->Role = $validated["Role"];
+        $user->hospital_id = $request->hospital_id;
+        $user->Title = $validated["Role"];
         $user->Notes = $validated["Notes"];
+
 
         $user->save();
 
         Session::flash("message","User record was updated successfully!");
 
-        return redirect('/Administrators');
+        return redirect('/Administrator');
     }
 
     /**
@@ -131,5 +142,17 @@ class AdminController extends Controller
     public function destroy($id)
     {
         dd("disable");
+    }
+
+    public function account()
+    {
+        $id = Auth::user()->id;
+        $hospitals = \App\Models\Hospital::all();
+        $Administrators = User::find($id);
+
+        return view('App.Administrators.show')->with([
+            'Administrators'=>$Administrators,
+            'hospitals' => $hospitals
+        ]);
     }
 }
