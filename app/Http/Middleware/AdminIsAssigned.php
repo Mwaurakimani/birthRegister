@@ -18,7 +18,7 @@ class AdminIsAssigned
     public function handle(Request $request, Closure $next)
     {
         if ((!isset(Auth::user()->hospital_id) || Auth::user()->hospital_id == null) && (Auth::user()->Title != 'Registrar')) {
-            return redirect('/Administrators/' . Auth::user()->id);
+            return redirect('/Account');
         }
 
         return $next($request);

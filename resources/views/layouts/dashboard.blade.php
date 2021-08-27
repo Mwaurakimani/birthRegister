@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/compiled/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/compiled/'.$custom_css) }}">
+    <link rel="stylesheet" href="{{asset('css/print/printPreview.css')}}">
     <link rel="stylesheet" href="{{asset('css/app/app.css')}}">
     <!-- end css -->
     <title>Document</title>

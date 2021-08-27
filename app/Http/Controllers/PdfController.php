@@ -17,8 +17,9 @@ class PdfController extends Controller
     public function downloadPost($id)
     {
         $Entries = entry::find($id);
-        $pdf = \PDF::loadView('pdf', compact('Entries'));
+        return view('pdf')->with('Entries', $Entries);
 
-        return $pdf->download('Entry.pdf');
+//        $pdf = \PDF::loadView('pdf', compact('Entries'));
+//        return $pdf->download('Entry.pdf');
     }
 }

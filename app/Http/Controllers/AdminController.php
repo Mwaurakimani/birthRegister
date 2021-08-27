@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use Session;
 use Illuminate\Http\Request;
 
@@ -141,7 +142,10 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        dd("disable");
+        $user = User::find($id);
+
+        $user->delete();
+
     }
 
     public function account()

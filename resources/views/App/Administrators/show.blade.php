@@ -14,7 +14,9 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Administrators">Back</a>
+        @if($Administrators->Title == 'Registrar')
+            <a href="/Administrators">Back</a>
+        @endif
     </div>
 
     <div class="entries_form">
@@ -31,7 +33,7 @@
                 @endforeach
             </div>
         @endif
-        <form action="/Administrators/{{$Administrators->id}}" id="birthEntry" method="POST">
+        <form action="/Administrator/{{$Administrators->id}}" id="birthEntry" method="POST">
             @method('PUT')
             @csrf
             <div class="sub_form_1">
@@ -102,9 +104,11 @@
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="Notes">Registered hospital</label>
-                        <select name="hospital_id" id="">
-                            <option>{{ \App\Models\Hospital::find($Administrators->hospital_id)->Name }}</option>
-                        </select>
+                        @if(isset($Administrators->hospital_id))
+                            <select name="hospital_id" id="">
+                                <option>{{ \App\Models\Hospital::find($Administrators->hospital_id)->Name }}</option>
+                            </select>
+                        @endif
                     </div>
                 </div>
             </div>

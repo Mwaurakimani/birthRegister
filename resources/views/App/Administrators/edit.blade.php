@@ -10,10 +10,10 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Administrators" >Back</a>
+        <a href="/Administrator" >Back</a>
         <button type="submit" form="userInput" value="submit" style="background-color: rgb(235, 151, 41);">Update
         </button>
-        <button type="submit" form="userInput" value="submit" style="background-color: rgb(235,41,41);">Delete
+        <button onclick="event.preventDefault();window.location.href='/Administrator/delete/{{ $Administrators->id }}'" form="userInput" value="submit" style="background-color: rgb(235,41,41);">Delete
         </button>
     </div>
 

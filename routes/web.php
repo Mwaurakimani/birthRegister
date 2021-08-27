@@ -28,6 +28,16 @@ Route::get('/entriesPrint/{id}', [PdfController::class,'index']);
 
 Route::get('/download/{id}', [PdfController::class,'downloadPost']);
 
+Route::get('/Administrator/delete/{id}', function ($id){
+    $admcontroller = new AdminController();
+
+    $admcontroller->destroy($id);
+
+    return redirect('/Administrator');
+});
+
+
+
 
 Route::middleware(['auth', 'hospital'])->group(function () {
     Route::get('/', function () {

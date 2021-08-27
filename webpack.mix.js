@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.browserSync('127.0.0.1:8000')
     .js('resources/js/app.js', 'public/js')
+    .sass('resources/scss/printPreview.scss', 'public/css/print')
     .sass('resources/scss/app.scss', 'public/css/app')
     .postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
