@@ -13,7 +13,7 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/download/{{ $Entries->id }}" >Download</a>
+        <a href="/download/{{ $Entries->id }}" >Print Page</a>
     </div>
 
     <div class="print-preview">

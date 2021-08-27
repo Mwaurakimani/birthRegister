@@ -45,6 +45,8 @@ class EntriesController extends Controller
      */
     public function store(Request $request)
     {
+        $hospital_id = Auth::user()->hospital_id;
+
         $validated = $request->validate([
             'childFirstName' => 'required',
             'childMiddleName' => 'required',
@@ -59,7 +61,6 @@ class EntriesController extends Controller
             'gender' => 'required',
             'typeOfBirth' => 'required',
             'natureOfBirth' => 'required',
-            'hospital' => ['required', new HospitalExist],
         ]);
 
         $entries = new entry();
@@ -77,7 +78,7 @@ class EntriesController extends Controller
         $entries->gender = $validated['gender'];
         $entries->typeOfBirth = $validated['typeOfBirth'];
         $entries->natureOfBirth = $validated['natureOfBirth'];
-        $entries->hospital_id = $validated['hospital'];
+        $entries->hospital_id = $hospital_id;
         $entries->user_id = Auth::id();
         $entries->createdBy = Auth::id();
 

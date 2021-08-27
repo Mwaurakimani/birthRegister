@@ -13,8 +13,10 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Entries" >Back</a>
-        <a href="/entriesPrint/{{ $Entries->id }}" >Print View</a>
+        <a href="/Entries">Back</a>
+        @if(\Illuminate\Support\Facades\Auth::user()->Title == 'Registrar')
+            <a href="/entriesPrint/{{ $Entries->id }}">Print View</a>
+        @endif
     </div>
 
     <div class="entries_form">

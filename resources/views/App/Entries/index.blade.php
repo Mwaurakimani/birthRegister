@@ -59,7 +59,7 @@
                             <td>
                                 <ul>
                                     <li><a href="/Entries/{{$entries->id}}">View</a></li>
-                                    <li><a href="/Entries/{{$entries->id}}/edit">Edit</a></li>
+{{--                                    <li><a href="/Entries/{{$entries->id}}/edit">Edit</a></li>--}}
                                 </ul>
                             </td>
                         </tr>

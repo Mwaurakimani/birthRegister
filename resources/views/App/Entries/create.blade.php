@@ -148,24 +148,24 @@
                 </div>
 
             </div>
-            <div class="sub_form_2">
-                <h4>Sub Details</h4>
+{{--            <div class="sub_form_2">--}}
+{{--                <h4>Sub Details</h4>--}}
 
 
-                <div class="input_elem_holder">
-                    <div class="form-group">
-                        <label for="hospital">Registered hospital</label>
-                        <select name="hospital" id="">
-                            <option value="0">None</option>
-                            @if(isset($hospitals) && count($hospitals) > 0)
-                                @foreach($hospitals as $hospital)
-                                    <option value="{{ $hospital->id }}"> {{ $hospital->Name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-                    </div>
-                </div>
-            </div>
+{{--                <div class="input_elem_holder">--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="hospital">Registered hospital</label>--}}
+{{--                        <select name="hospital" id="">--}}
+{{--                            <option value="0">None</option>--}}
+{{--                            @if(isset($hospitals) && count($hospitals) > 0)--}}
+{{--                                @foreach($hospitals as $hospital)--}}
+{{--                                    <option value="{{ $hospital->id }}"> {{ $hospital->Name }}</option>--}}
+{{--                                @endforeach--}}
+{{--                            @endif--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </form>
     </div>
 @endsection
