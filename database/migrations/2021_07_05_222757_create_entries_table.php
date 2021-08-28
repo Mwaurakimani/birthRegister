@@ -28,10 +28,21 @@ class CreateEntriesTable extends Migration
             $table->string("gender");
             $table->string("typeOfBirth");
             $table->string("natureOfBirth");
-            $table->unsignedBigInteger("hospital_id");
-            $table->unsignedBigInteger("user_id");
+            $table->unsignedBigInteger("hospital_id")->nullable();
+            $table->unsignedBigInteger("user_id")->nullable();
             $table->string("createdBy");
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('set Null');
+            $table->foreign('hospital_id')
+                ->references('id')
+                ->on('hospitals')
+                ->onUpdate('cascade')
+                ->onDelete('set Null');
         });
     }
 

@@ -18,8 +18,7 @@ class UserSeeder extends Seeder
         $filedata = file_get_contents(database_path('/Data/User.json'));
         $details = json_decode($filedata);
 
-        User::query()->truncate();
-
+        User::select('*')->delete();
 
 
         foreach ($details as $detail){
