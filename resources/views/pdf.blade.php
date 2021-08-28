@@ -94,54 +94,52 @@
     }
 
 </style>
-<div id="main" class="print-preview">
+<div class="print-preview">
     <h2>Republic of Kenya</h2>
     <h3>Certificate of Kenya</h3>
     <div class="sub-one">
-        <p>Birth in the <span>Region</span>
-            District in the <span>Region</span> Province</p>
+        <p>Birth in the <span>{{ $Entries->hospital->subRegion }}</span>
+            District in the <span>{{ $Entries->hospital->Region }}</span> Province</p>
     </div>
     <div class="main-entry">
         <div class="section" style="grid-column: 0/4;grid-row: 1/2">
             <h4>Entry No.</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->id }}</p>
         </div>
         <div class="section">
             <h4>Where Born</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->hospital->Region }}</p>
         </div>
         <div class="section">
             <h4>Name</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->childFirstName }} {{ $Entries->childMiddleName }}</p>
         </div>
         <div class="section" style="grid-column: 0/4;grid-row:2/3">
             <h4>Date of Birth</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->dateOfBirth }}</p>
         </div>
         <div class="section" style="grid-column: 2/3;grid-row:2/3">
             <h4>Sex</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->gender }}</p>
         </div>
         <div class="section" style="grid-column: 0/4;grid-row:2/3">
             <h4>Name and Surname of Father No.</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->fatherFirstName }} {{ $Entries->fatherLastName }}</p>
         </div>
         <div class="section" style="grid-column: 1/4;grid-row:3/4">
             <h4>Name and Maiden Name of Mother</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->motherFirstName }} {{ $Entries->motherLastName }}</p>
         </div>
         <div class="section" style="grid-column: 1/2;grid-row:4/5">
             <h4>Name of Registering Officer</h4>
-            <p>923409823098402</p>
+            <p>{{ $Entries->User->firstName }} {{ $Entries->User->lastName }}</p>
         </div>
-        <div class="section" style="grid-column: 3/4;grid-row:4/5">
+        <div class="section"  style="grid-column: 3/4;grid-row:4/5">
             <h4>Date of Registration</h4>
-            <p>923409823098402</p>
+            <p>{{ date('m/d/y',strtotime($Entries->created_at)) }}</p>
         </div>
     </div>
-    <p class="declaration">Registrar for Kiambu ,hereby certify that this certificate is compiled from an entry/return
-        in the Register of births in the region</p>
-
+    <p class="declaration">Registrar for {{ $Entries->hospital->Region }} ,hereby certify that this certificate is compiled from an entry/return in the Register of births in the  region</p>
 </div>
 <button id="noprint" onclick="printPage()">
 Print
