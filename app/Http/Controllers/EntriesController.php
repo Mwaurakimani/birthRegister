@@ -47,6 +47,7 @@ class EntriesController extends Controller
     {
         $hospital_id = Auth::user()->hospital_id;
 
+
         $validated = $request->validate([
             'childFirstName' => 'required',
             'childMiddleName' => 'required',
@@ -74,7 +75,7 @@ class EntriesController extends Controller
         $entries->fatherFirstName = $validated['fatherFirstName'];
         $entries->fatherMiddleName = $validated['fatherMiddleName'];
         $entries->fatherLastName = $validated['fatherLastName'];
-        $entries->dateOfBirth = $validated['dateOfBirth'];
+        $entries->dateOfBirth = date('Y-m-d H:i:s',strtotime($validated['dateOfBirth']));
         $entries->gender = $validated['gender'];
         $entries->typeOfBirth = $validated['typeOfBirth'];
         $entries->natureOfBirth = $validated['natureOfBirth'];

@@ -6,7 +6,7 @@
 
 
 @section('content')
-<x-content-heading :name="'Dashboard'" />
+<x-content-heading :name="__('Hospital')" />
 
 <x-sub-nav :buttons="$nav_buttons" />
 

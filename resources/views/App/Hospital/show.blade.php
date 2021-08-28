@@ -5,14 +5,13 @@
 
 
 @section('content')
-    <x-content-heading :name="'Dashboard'"/>
+    <x-content-heading :name="__('Hospital')"/>
 
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
         <a href="/Hospital" >Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(235, 151, 41);">Update
-        </button>
+
     </div>
 
     <div class="entries_form">

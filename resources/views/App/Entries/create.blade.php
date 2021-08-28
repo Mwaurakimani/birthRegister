@@ -10,14 +10,17 @@
 @endphp
 
 @section('content')
-    <x-content-heading :name="'Dashboard'"/>
+    <x-content-heading :name="__('Entries')"/>
 
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
         <a href="/Entries">Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">create
-        </button>
+        @if(\Illuminate\Support\Facades\Auth::user()->Title == 'Admin')
+
+            <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">create
+            </button>
+                @endif
     </div>
 
     <div class="entries_form">
@@ -111,12 +114,14 @@
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-2" style="margin-top: 30px">
-                    <div class="form-group">
+                    <div id="sandbox-container"  class="form-group ">
                         <label for="dateOfBirth">Date Of Birth</label>
-                        <input type="date"
-                               class="form-control"
-                               name="dateOfBirth"
-                        >
+{{--                        <input id="date_of_birth"--}}
+{{--                               type="text"--}}
+{{--                               class="form-control"--}}
+{{--                               name="dateOfBirth"--}}
+{{--                        >--}}
+                        <input type="text" type="text" class="form-control" name="dateOfBirth" />
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
@@ -148,25 +153,32 @@
                 </div>
 
             </div>
-{{--            <div class="sub_form_2">--}}
-{{--                <h4>Sub Details</h4>--}}
+            {{--            <div class="sub_form_2">--}}
+            {{--                <h4>Sub Details</h4>--}}
 
 
-{{--                <div class="input_elem_holder">--}}
-{{--                    <div class="form-group">--}}
-{{--                        <label for="hospital">Registered hospital</label>--}}
-{{--                        <select name="hospital" id="">--}}
-{{--                            <option value="0">None</option>--}}
-{{--                            @if(isset($hospitals) && count($hospitals) > 0)--}}
-{{--                                @foreach($hospitals as $hospital)--}}
-{{--                                    <option value="{{ $hospital->id }}"> {{ $hospital->Name }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            @endif--}}
-{{--                        </select>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--                <div class="input_elem_holder">--}}
+            {{--                    <div class="form-group">--}}
+            {{--                        <label for="hospital">Registered hospital</label>--}}
+            {{--                        <select name="hospital" id="">--}}
+            {{--                            <option value="0">None</option>--}}
+            {{--                            @if(isset($hospitals) && count($hospitals) > 0)--}}
+            {{--                                @foreach($hospitals as $hospital)--}}
+            {{--                                    <option value="{{ $hospital->id }}"> {{ $hospital->Name }}</option>--}}
+            {{--                                @endforeach--}}
+            {{--                            @endif--}}
+            {{--                        </select>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </form>
+
+            <script>
+                $('#sandbox-container input').datepicker({
+                    autoclose: true,
+                    endDate: new Date(new Date().setDate(new Date().getDate()))
+                });
+            </script>
     </div>
 @endsection
 

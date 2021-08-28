@@ -6,7 +6,7 @@
 
 
 @section('content')
-<x-content-heading :name="'Dashboard'" />
+<x-content-heading :name="__('Administrator')" />
 
 <x-sub-nav :buttons="$nav_buttons" />
 
@@ -56,7 +56,6 @@
                         <td>
                             <ul>
                                 <li><a href="/Administrator/{{$Administrators->id}}/edit">View/edit</a></li>
-                                <li><a href="/Administrator/{{$Administrators->id}}/edit">Delete</a></li>
                             </ul>
                         </td>
                     </tr>

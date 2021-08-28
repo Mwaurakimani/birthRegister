@@ -6,9 +6,9 @@
 
 
 @section('content')
-    <x-content-heading :name="'Dashboard'" />
+    <x-content-heading :name="__('Entries')"/>
 
-    <x-sub-nav :buttons="$nav_buttons" />
+    <x-sub-nav :buttons="$nav_buttons"/>
 
     <form class="filter_bar Entries_filter_bar">
         <div class="select_field">
@@ -16,7 +16,11 @@
         </div>
         <div class="button_field_Entries">
             <ul>
-                <li style="grid-column: 8/9;" ><a href="/Entries/create">Create</a></li>
+                <li style="grid-column: 8/9;">
+                    @if(\Illuminate\Support\Facades\Auth::user()->Title == 'Admin')
+                        <a href="/Entries/create">Create</a>
+                    @endif
+                </li>
             </ul>
         </div>
     </form>
@@ -59,7 +63,7 @@
                             <td>
                                 <ul>
                                     <li><a href="/Entries/{{$entries->id}}">View</a></li>
-{{--                                    <li><a href="/Entries/{{$entries->id}}/edit">Edit</a></li>--}}
+                                    {{--                                    <li><a href="/Entries/{{$entries->id}}/edit">Edit</a></li>--}}
                                 </ul>
                             </td>
                         </tr>

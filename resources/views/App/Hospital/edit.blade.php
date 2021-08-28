@@ -5,13 +5,13 @@
 
 
 @section('content')
-    <x-content-heading :name="'Dashboard'"/>
+    <x-content-heading :name="__('Hospital')"/>
 
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
         <a href="/Hospital" >Back</a>
-        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(233,28,53);">Delete
+        <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(235, 151, 41);">Update
         </button>
     </div>
 
@@ -30,7 +30,7 @@
             </div>
         @endif
         <form action="/Hospital/{{ $hospital->id }}" id="birthEntry" method="POST">
-            @method('Delete')
+            @method('PUT')
             @csrf
             <div class="sub_form_1">
                 <h4>Hospital Records</h4>

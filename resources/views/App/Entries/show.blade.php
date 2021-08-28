@@ -8,7 +8,7 @@
 
 
 @section('content')
-    <x-content-heading :name="'Dashboard'"/>
+    <x-content-heading :name="__('Entries')"/>
 
     <x-sub-nav :buttons="$nav_buttons"/>
 
