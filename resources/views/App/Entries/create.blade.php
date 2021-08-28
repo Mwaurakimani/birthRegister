@@ -176,6 +176,7 @@
             <script>
                 $('#sandbox-container input').datepicker({
                     autoclose: true,
+                    startDate: new Date(),
                     endDate: new Date(new Date().setDate(new Date().getDate()))
                 });
             </script>
