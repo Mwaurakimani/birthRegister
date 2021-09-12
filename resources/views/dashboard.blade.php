@@ -118,6 +118,8 @@
                 "typ_of_birth": typ_of_birth
             }
 
+            console.log(data);
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -130,6 +132,7 @@
                     'data':data
                 },
                 success: function (data) {
+                    console.log(data);
                     $('.dashboard_table_view').html(data);
                 },
                 error: (data) => {
