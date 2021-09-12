@@ -55,7 +55,7 @@
                         <td>{{ $Administrators->created_at }}</td>
                         <td>
                             <ul>
-                                <li><a href="/Administrator/{{$Administrators->id}}/edit">View/edit</a></li>
+                                <li><a href="/Administrator/{{$Administrators->id}}/edit">Edit</a></li>
                             </ul>
                         </td>
                     </tr>

@@ -10,10 +10,11 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Administrator" >Back</a>
+        <a href="/Administrator">Back</a>
         <button type="submit" form="userInput" value="submit" style="background-color: rgb(235, 151, 41);">Update
         </button>
-        <button onclick="event.preventDefault();window.location.href='/Administrator/delete/{{ $Administrators->id }}'" form="userInput" value="submit" style="background-color: rgb(235,41,41);">Delete
+        <button onclick="event.preventDefault();window.location.href='/Administrator/delete/{{ $Administrators->id }}'"
+                form="userInput" value="submit" style="background-color: rgb(235,41,41);">Delete
         </button>
     </div>
 
@@ -35,7 +36,7 @@
             @method('PUT')
             @csrf
             <div class="sub_form_1">
-                <h4>Administrators Records</h4>
+                <h4>Administrator Record</h4>
                 <div class="input_elem_holder grid-elem-2">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -65,10 +66,13 @@
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="Role">Role</label>
-                        <input type="text"
-                               class="form-control"
-                               name="Role"
-                               value="{{ $Administrators->Title ? $Administrators->Title : "" }}">
+                        <select class="form-control" name="Role" id="Role" onchange="update_hospital_display()">
+                            <option value="Admin" {{ $Administrators->Title == "Admin" ? "selected" : "" }}>Admin
+                            </option>
+                            <option value="Registrar" {{ $Administrators->Title == "Registrar"  ? "selected" : "" }} >
+                                Registrar
+                            </option>
+                        </select>
                     </div>
                 </div>
                 <div class="input_elem_holder">
@@ -86,7 +90,8 @@
                         <label for="Modified_at">Created at</label>
                         <input type="text"
                                class="form-control"
-                               name="Modified_at" value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
+                               name="Modified_at"
+                               value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
                     </div>
                 </div>
                 <div class="input_elem_holder">
@@ -94,22 +99,39 @@
                         <label for="Modified_at">Modified at</label>
                         <input type="text"
                                class="form-control"
-                               name="Modified_at" value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
+                               name="Modified_at"
+                               value="{{ $Administrators->updated_at ? $Administrators->updated_at : "" }}">
                     </div>
                 </div>
-                <div class="input_elem_holder">
+
+                <div class="input_elem_holder" id="hos"  style="{{$Administrators->Title != "Admin" ? 'display:none' : ''}}">
                     <div class="form-group">
                         <label for="Notes">Registered hospital</label>
                         <select name="hospital_id" id="">
                             <option value="">None</option>
                             @forelse ($hospitals as $hospital)
-                                <option value="{{ $hospital->id }}" {{ isset($Administrators->hospital_id) && $Administrators->hospital_id == $hospital->id ? 'selected' : '' }}>{{ $hospital->Name }}</option>
+                                <option
+                                    value="{{ $hospital->id }}" {{ isset($Administrators->hospital_id) && $Administrators->hospital_id == $hospital->id ? 'selected' : '' }}>{{ $hospital->Name }}</option>
                             @empty
                             @endforelse
                         </select>
                     </div>
                 </div>
+
+
             </div>
+            <script>
+                function update_hospital_display() {
+                    let elem = $('#Role').val();
+
+                    if (elem == "Admin") {
+                        $('#hos').css("display", "block");
+                    } else {
+                        $('#hos').css("display", "none");
+
+                    }
+                }
+            </script>
         </form>
     </div>
 @endsection

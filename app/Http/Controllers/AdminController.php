@@ -122,7 +122,9 @@ class AdminController extends Controller
         $user->firstName = $validated["firstName"];
         $user->lastName = $validated["lastName"];
         $user->email = $validated["email"];
-        $user->hospital_id = $request->hospital_id;
+        if($validated["Role"] == 'Admin'){
+            $user->hospital_id = $request->hospital_id;
+        }
         $user->Title = $validated["Role"];
         $user->Notes = $validated["Notes"];
 

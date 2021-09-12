@@ -59,7 +59,7 @@
                                 <p>{{ $entries->FathersName }}</p>
                             </td>
                             <td>{{ $entries->dateOfBirth }}</td>
-                            <td>{{ $entries->Hospital->Name }}</td>
+                            <td style="">{{ $entries->Hospital->Name }}</td>
                             <td>
                                 <ul>
                                     <li><a href="/Entries/{{$entries->id}}">View</a></li>

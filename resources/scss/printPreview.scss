@@ -36,6 +36,9 @@
         grid-template-rows: repeat(5,1fr);
         .section{
             display: flex;
+            h4{
+                padding-top: 5px;
+            }
         }
         .section:nth-of-type(n+1):nth-of-type(-n+6){
             h4{
@@ -56,6 +59,7 @@
                 padding-left: 10px;
                 margin-right: 10px
             }
+
         }
         .section:nth-of-type(n+8){
             h4{

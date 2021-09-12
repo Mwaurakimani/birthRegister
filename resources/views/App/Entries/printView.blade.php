@@ -18,7 +18,7 @@
 
     <div class="print-preview">
         <h2>Republic of Kenya</h2>
-        <h3>Certificate of Kenya</h3>
+        <h3>Certificate of Birth</h3>
         <div class="sub-one">
             <p>Birth in the <span>{{ $Entries->hospital->subRegion }}</span>
                 District in the <span>{{ $Entries->hospital->Region }}</span> Province</p>
@@ -46,11 +46,11 @@
             </div>
             <div class="section" style="grid-column: 0/4;grid-row:2/3">
                 <h4>Name and Surname of Father No.</h4>
-                <p>{{ $Entries->fatherFirstName }} {{ $Entries->fatherLastName }}</p>
+                <p>{{ $Entries->fatherFirstName }} {{ $Entries->fatherMiddleName }} {{ $Entries->fatherLastName }}</p>
             </div>
             <div class="section" style="grid-column: 1/4;grid-row:3/4">
                 <h4>Name and Maiden Name of Mother</h4>
-                <p>{{ $Entries->motherFirstName }} {{ $Entries->motherLastName }}</p>
+                <p>{{ $Entries->motherFirstName }} {{ $Entries->motherMiddleName }} {{ $Entries->motherLastName }}</p>
             </div>
             <div class="section" style="grid-column: 1/2;grid-row:4/5">
                 <h4>Name of Registering Officer</h4>

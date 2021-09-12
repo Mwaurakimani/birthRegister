@@ -40,7 +40,7 @@
         <form action="/Entries" id="birthEntry" method="POST">
             @csrf
             <div class="sub_form_1">
-                <h4>Entries Records</h4>
+                <h4>Entry Record</h4>
                 <div class="input_elem_holder grid-elem-3">
                     <h6>Child</h6>
                     <div class="form-group">

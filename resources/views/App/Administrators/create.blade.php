@@ -10,7 +10,7 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <div class="action_bar">
-        <a href="/Administrators" >Back</a>
+        <a href="/Administrator" >Back</a>
         <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(235, 151, 41);">Creating
         </button>
     </div>
@@ -29,10 +29,10 @@
                 @endforeach
             </div>
         @endif
-        <form action="/Administrators" id="birthEntry" method="POST">
+        <form action="/Administrator" id="birthEntry" method="POST">
             @csrf
             <div class="sub_form_1">
-                <h4>Administrators Records</h4>
+                <h4>Administrator Record</h4>
                 <div class="input_elem_holder grid-elem-2">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -61,10 +61,10 @@
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="Role">Role</label>
-                        <input type="text"
-                               class="form-control"
-                               name="Role"
-                        >
+                        <select class="form-control" name="Role" id="Role">
+                            <option value="Admin">Admin</option>
+                            <option value="Registrar">Registrar</option>
+                        </select>
                     </div>
                 </div>
                 <div class="input_elem_holder">
@@ -74,18 +74,6 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="sub_form_2">
-                <h4>Sub Details</h4>
-                <div class="input_elem_holder">
-                    <div class="form-group">
-                        <label for="Notes">Registered hospital</label>
-                        <input type="text"
-                               class="form-control"
-                               name="Modified_at"
-                        >
-                    </div>
-                </div>
             </div>
         </form>
     </div>

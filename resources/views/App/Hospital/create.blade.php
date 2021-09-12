@@ -35,16 +35,6 @@
                 <h4>Hospital Records</h4>
                 <div class="input_elem_holder">
                     <div class="form-group">
-                        <label for="userid">ID</label>
-                        <input type="text"
-                               class="form-control"
-                               name="userid"
-                               disabled="disabled"
-                               >
-                    </div>
-                </div>
-                <div class="input_elem_holder">
-                    <div class="form-group">
                         <label for="Name">Name</label>
                         <input type="text"
                                class="form-control"

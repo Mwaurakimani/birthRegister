@@ -39,6 +39,9 @@
 .print-preview .main-entry .section {
   display: flex;
 }
+.print-preview .main-entry .section h4 {
+  padding-top: 5px;
+}
 .print-preview .main-entry .section:nth-of-type(n+1):nth-of-type(-n+6) h4 {
   color: red;
   width: 80px;

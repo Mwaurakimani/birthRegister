@@ -7,7 +7,7 @@
         @foreach($buttons as $buttonx)
 
                 @if(\Request::is($buttonx,$buttonx."/*"))
-                    <li>
+                    <li style="border-bottom: 2px solid #2DB2E3">
                         <a href="/{{ $buttonx }}"> {{$buttonx}} </a>
                     </li>
                 @else
@@ -18,5 +18,20 @@
         @endforeach
 
     </ul>
+
+    <span>{{ \Illuminate\Support\Facades\Auth::user()->name }}</span>
+
+    <style>
+        .sub_navigation > ul{
+            display: inline-flex;
+            width: 600px;
+        }
+        .sub_navigation > span{
+            float: right;
+            padding-right: 10px;
+            color: #2DB2E3;
+            font-weight: bold;
+        }
+    </style>
 </div>
 
