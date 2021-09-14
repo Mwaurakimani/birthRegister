@@ -10,18 +10,6 @@
     <x-sub-nav :buttons="$nav_buttons"/>
 
     <form class="filter_bar" style="display: grid">
-        <div class="select_field">
-            <label for="filter_period">Births Within</label>
-            <select name="" class="form-select" aria-label="Default select example">
-                <option selected>Date</option>
-                <option value="All">All</option>
-                <option value="today">today</option>
-                <option value="thisWeek">thisWeek</option>
-                <option value="thisMonth">thisMonth</option>
-            </select>
-
-
-        </div>
         <button id="filter_button" onclick="toggle_filter_bar()">
             Toggle Filters
         </button>

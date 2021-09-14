@@ -42,10 +42,10 @@ class AdminController extends Controller
     {
 
         $validated = $request->validate([
-            'firstName' => 'required',
-            'lastName' => 'required',
+            'firstName' => 'required|alpha',
+            'lastName' => 'required|alpha',
             'email' => 'required|email',
-            'Role' => 'required',
+            'Role' => 'required|alpha',
             'Notes' => 'nullable|max:250',
         ]);
 
@@ -113,10 +113,10 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'firstName' => 'required',
-            'lastName' => 'required',
+            'firstName' => 'required|alpha',
+            'lastName' => 'required|alpha',
             'email' => 'required|email',
-            'Role' => 'required',
+            'Role' => 'required|alpha',
             'Notes' => 'nullable|max:250',
         ]);
 
