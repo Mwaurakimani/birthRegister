@@ -41,10 +41,10 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'firstName' => 'required|alpha',
-            'lastName' => 'required|alpha',
+            'firstName' => 'required',
+            'lastName' => 'required',
             'email' => 'required|email',
-            'Role' => 'required|alpha',
+            'Role' => 'required',
             'Notes' => 'nullable|max:250',
         ]);
 
@@ -110,10 +110,10 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'firstName' => 'required|alpha',
-            'lastName' => 'required|alpha',
+            'firstName' => 'required',
+            'lastName' => 'required',
             'email' => 'required|email',
-            'Role' => 'required|alpha',
+            'Role' => 'required',
             'Notes' => 'nullable|max:250',
         ]);
 
