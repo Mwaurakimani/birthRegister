@@ -21,19 +21,22 @@ use App\Http\Controllers\PdfController;
 */
 
 
-Route::get('/Account', [AdminController::class, 'account'])->middleware('auth');
 
-Route::get('/entriesPrint/{id}', [PdfController::class, 'index']);
+Route::get('/Account',[AdminController::class,'account'])->middleware('auth');
 
-Route::get('/download/{id}', [PdfController::class, 'downloadPost']);
+Route::get('/entriesPrint/{id}', [PdfController::class,'index']);
 
-Route::get('/Administrator/delete/{id}', function ($id) {
+Route::get('/download/{id}', [PdfController::class,'downloadPost']);
+
+Route::get('/Administrator/delete/{id}', function ($id){
     $admcontroller = new AdminController();
 
     $admcontroller->destroy($id);
 
     return redirect('/Administrator');
 });
+
+
 
 
 Route::middleware(['auth', 'hospital'])->group(function () {
@@ -67,34 +70,28 @@ Route::middleware(['auth', 'hospital'])->group(function () {
 //ajax
 //filter Dashboard
 
-Route::post('/filterData', function (Request $request) {
+Route::post('/filterData',function (Request $request){
     $data = $request->data;
 
-    if (Auth::user()->Title == "Admin") {
-        $query = entry::where('user_id', Auth::user()->id);
-    }else{
-        $query = entry::select('*');
-    }
+    $query = entry::where('user_id',Auth::user()->id);
 
-
-    if (isset($data['date_created'])) {
-        $query = $query->whereRaw(' DATE(created_at) = ?', $data['date_created']);
+    if(isset($data['date_created'])){
+        $query = $query->whereRaw(' DATE(created_at) = ?',$data['date_created']);
     }
-    if (isset($data['date_of_birth'])) {
-        $query = $query->whereRaw(' DATE(dateOfBirth) = ?', $data['date_of_birth']);
+    if($data['date_of_birth']){
+        $query = $query->whereRaw(' DATE(dateOfBirth) = ?',$data['date_of_birth']);
     }
-    if (isset($data['last_name'])) {
-        $query = $query->where('childLastNam', 'LIKE', '%' . $data['last_name'] . '%');
+    if($data['last_name']){
+        $query = $query->where('childLastNam','LIKE','%'.$data['last_name'].'%');
     }
-    if (isset($data['gender'])) {
-        $query = $query->where('gender', $data['gender']);
+    if($data['gender']){
+        $query = $query->where('gender',$data['gender']);
     }
-    if (isset($data['typ_of_birth'])) {
-        $query = $query->where('typeOfBirth', $data['typ_of_birth']);
+    if($data['typ_of_birth']){
+        $query = $query->where('typeOfBirth',$data['typ_of_birth']);
     }
 
     $records = $query->get();
-
 
     $view = view('components.App.Tables.dashboard-table')
         ->with(
@@ -103,6 +100,7 @@ Route::post('/filterData', function (Request $request) {
 
     return $view;
 });
+
 
 
 require __DIR__ . '/auth.php';

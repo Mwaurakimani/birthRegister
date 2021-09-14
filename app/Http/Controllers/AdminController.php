@@ -40,7 +40,6 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-
         $validated = $request->validate([
             'firstName' => 'required|alpha',
             'lastName' => 'required|alpha',
@@ -48,8 +47,6 @@ class AdminController extends Controller
             'Role' => 'required|alpha',
             'Notes' => 'nullable|max:250',
         ]);
-
-
 
         $user = new User();
 
