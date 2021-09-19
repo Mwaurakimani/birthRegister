@@ -685,6 +685,18 @@ nav p {
   box-shadow: 0 2px 3px grey;
 }
 
+.results_display_stat {
+  width: 95%;
+  margin: auto;
+  height: 50px;
+  background-color: grey;
+}
+.results_display_stat p {
+  width: auto;
+  height: 100%;
+  line-height: 50px;
+}
+
 .dashboard_table_view {
   width: 96%;
   margin: auto;
