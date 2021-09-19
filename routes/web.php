@@ -77,8 +77,8 @@ Route::post('/filterData', function (Request $request) {
     }
 
 
-    if (isset($data['date_created'])) {
-        $query = $query->whereRaw(' DATE(created_at) = ?', $data['date_created']);
+    if (isset($data['hospital']) && $data['hospital'] != 0) {
+        $query = $query->whereRaw(' hospital_id = ?', $data['hospital']);
     }
     if (isset($data['date_of_birth'])) {
         $query = $query->whereRaw(' DATE(dateOfBirth) = ?', $data['date_of_birth']);

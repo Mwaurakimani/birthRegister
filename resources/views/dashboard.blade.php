@@ -3,6 +3,11 @@
     'custom_css'=>"dashboard.css"
 ])
 
+@php
+    $hospitals = \App\Models\Hospital::all();
+
+@endphp
+
 
 @section('content')
     <x-content-heading :name="'Dashboard'"/>
@@ -17,8 +22,19 @@
     <div class="dashboard_filter" data-toggle="false">
         <div class="filter_panel">
             <div class="input_elem">
-                <label for="">Date Created</label>
-                <input type="Date" name="date_created">
+
+                <label for="">Hospital</label>
+                <select name="hospital" id="hospital">
+                    <option value="0">All</option>
+
+
+                @if(isset($hospitals) && count($hospitals) > 0)
+                        @foreach($hospitals as $hospital)
+                            <option value="{{$hospital->id}}">{{$hospital->Name}}</option>
+                        @endforeach
+                    @endif
+
+                </select>
             </div>
             <div class="input_elem">
                 <label for="">Date of Birth</label>
@@ -49,11 +65,14 @@
             <button onclick="collect_filters()">Apply</button>
             <button onclick="clear_filters()">Clear</button>
         </div>
-    </div>
 
+    </div>
+    <div class="results_display_stat">
+        <p>Results found</p>
+    </div>
     <div class="body_layout dashboard_table_view">
         @if(isset($records) && count($records) > 0 )
-            <x-App.Tables.dashboard-table :records="$records" >
+            <x-App.Tables.dashboard-table :records="$records">
 
             </x-App.Tables.dashboard-table>
         @else
@@ -92,19 +111,21 @@
         }
 
         function collect_filters() {
-            let date_created = $("[name='date_created']").val();
+            let hospital = $("[name='hospital']").val();
             let date_of_birth = $("[name='date_of_birth']").val();
             let last_name = $("[name='last_name']").val();
             let gender = $("[name='gender']").val();
             let typ_of_birth = $("[name='typ_of_birth']").val();
 
             let data = {
-                "date_created": date_created,
+                "hospital": hospital,
                 "date_of_birth": date_of_birth,
                 "last_name": last_name,
                 "gender": gender,
                 "typ_of_birth": typ_of_birth
             }
+
+
 
             console.log(data);
 
@@ -117,7 +138,7 @@
                 type: 'POST',
                 url: '/filterData',
                 data: {
-                    'data':data
+                    'data': data
                 },
                 success: function (data) {
                     console.log(data);
@@ -129,14 +150,14 @@
             });
         }
 
-        function clear_filters(){
-             $("[name='date_created']").val("");
-             $("[name='date_of_birth']").val("");
-             $("[name='last_name']").val("");
-             $("[name='gender']").val("");
-             $("[name='typ_of_birth']").val("");
+        function clear_filters() {
+            $("[name='date_created']").val("");
+            $("[name='date_of_birth']").val("");
+            $("[name='last_name']").val("");
+            $("[name='gender']").val("");
+            $("[name='typ_of_birth']").val("");
 
-             collect_filters();
+            collect_filters();
         }
     </script>
 @endsection
