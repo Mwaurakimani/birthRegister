@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/compiled/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/compiled/home.css') }}">
     <!-- end css -->
-    <title>Online birth notification system</title>
+    <title>OBNS</title>
 </head>
 
 <body>
