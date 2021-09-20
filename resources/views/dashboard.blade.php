@@ -146,7 +146,7 @@
                 }
             });
         }
-
+// update
         function clear_filters() {
             $("[name='hospital']").val("");
             $("[name='date_of_birth']").val("");
