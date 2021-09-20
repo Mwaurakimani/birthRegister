@@ -67,9 +67,6 @@
         </div>
 
     </div>
-    <div class="results_display_stat">
-        <p>Results found</p>
-    </div>
     <div class="body_layout dashboard_table_view">
         @if(isset($records) && count($records) > 0 )
             <x-App.Tables.dashboard-table :records="$records">
@@ -151,7 +148,7 @@
         }
 
         function clear_filters() {
-            $("[name='date_created']").val("");
+            $("[name='hospital']").val("");
             $("[name='date_of_birth']").val("");
             $("[name='last_name']").val("");
             $("[name='gender']").val("");
