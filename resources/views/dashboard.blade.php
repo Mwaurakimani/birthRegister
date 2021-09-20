@@ -26,7 +26,7 @@
                 <label for="">Hospital</label>
                 <select name="hospital" id="hospital">
                     <option value="0">All</option>
-
+{{--                    update--}}
 
                 @if(isset($hospitals) && count($hospitals) > 0)
                         @foreach($hospitals as $hospital)
