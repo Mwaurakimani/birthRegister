@@ -429,6 +429,14 @@ nav p {
   margin-bottom: 10px;
 }
 
+.entries_form form a {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
 .entries_form form > div .input_elem_holder * {
   vertical-align: top;
 }

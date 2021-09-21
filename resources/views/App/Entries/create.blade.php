@@ -20,7 +20,7 @@
 
             <button type="submit" form="birthEntry" value="submit" style="background-color: rgb(74,207,38);">create
             </button>
-                @endif
+        @endif
     </div>
 
     <div class="entries_form">
@@ -114,14 +114,9 @@
                     </div>
                 </div>
                 <div class="input_elem_holder grid-elem-2" style="margin-top: 30px">
-                    <div id="sandbox-container"  class="form-group ">
+                    <div id="sandbox-container" class="form-group ">
                         <label for="dateOfBirth">Date Of Birth</label>
-{{--                        <input id="date_of_birth"--}}
-{{--                               type="text"--}}
-{{--                               class="form-control"--}}
-{{--                               name="dateOfBirth"--}}
-{{--                        >--}}
-                        <input type="text" type="text" class="form-control" name="dateOfBirth" />
+                        <input id="dateOfBirth" type="text" type="text" class="form-control" name="dateOfBirth"/>
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
@@ -153,34 +148,36 @@
                 </div>
 
             </div>
-            {{--            <div class="sub_form_2">--}}
-            {{--                <h4>Sub Details</h4>--}}
+            <div class="sub_form_2">
+                <h4>Sub Details</h4>
 
-
-            {{--                <div class="input_elem_holder">--}}
-            {{--                    <div class="form-group">--}}
-            {{--                        <label for="hospital">Registered hospital</label>--}}
-            {{--                        <select name="hospital" id="">--}}
-            {{--                            <option value="0">None</option>--}}
-            {{--                            @if(isset($hospitals) && count($hospitals) > 0)--}}
-            {{--                                @foreach($hospitals as $hospital)--}}
-            {{--                                    <option value="{{ $hospital->id }}"> {{ $hospital->Name }}</option>--}}
-            {{--                                @endforeach--}}
-            {{--                            @endif--}}
-            {{--                        </select>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
+                <div class="input_elem_holder" style="margin-top: 30px">
+                    <div class="form-group ">
+                        <label for="phone">Parent/Guardian Phone</label>
+                        <input id="phone" type="tel" type="text" class="form-control" name="phone" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Parent/Guardian E-mail</label>
+                        <input id="email" type="email" type="text" class="form-control" name="email" />
+                    </div>
+                </div>
+            </div>
         </form>
 
-            <script>
-                $('#sandbox-container input').datepicker({
-                    autoclose: true,
-                    startDate: new Date(),
-                    endDate: new Date(new Date().setDate(new Date().getDate()))
-                });
-            </script>
+        <script>
+            $('#sandbox-container input').datepicker({
+                autoclose: true,
+                startDate: new Date(),
+                endDate: new Date(new Date().setDate(new Date().getDate()))
+            });
+        </script>
     </div>
 @endsection
+
+{{--                        <input id="date_of_birth"--}}
+{{--                               type="text"--}}
+{{--                               class="form-control"--}}
+{{--                               name="dateOfBirth"--}}
+{{--                        >--}}
 
 

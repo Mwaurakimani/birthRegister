@@ -149,6 +149,16 @@
             </div>
             <div class="sub_form_2">
                 <h4>Sub Details</h4>
+                <div class="input_elem_holder" style="margin-top: 30px">
+                    <div class="form-group ">
+                        <label for="phone">Parent/Guardian Phone</label>
+                        <a href="tel:{{ $Entries->parentNumber ? $Entries->parentNumber : "" }}">{{ $Entries->parentNumber ? $Entries->parentNumber : "" }}</a>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Parent/Guardian E-mail</label>
+                        <a href="mailto:{{ $Entries->emailAddress ? $Entries->emailAddress : "" }}">{{ $Entries->emailAddress ? $Entries->emailAddress : "" }}</a>
+                    </div>
+                </div>
                 <div class="input_elem_holder">
                     <div class="form-group">
                         <label for="updated_at">Created at</label>

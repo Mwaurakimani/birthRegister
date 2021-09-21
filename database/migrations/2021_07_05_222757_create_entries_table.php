@@ -24,6 +24,8 @@ class CreateEntriesTable extends Migration
             $table->string("fatherFirstName");
             $table->string("fatherMiddleName");
             $table->string("fatherLastName");
+            $table->string("parentNumber");
+            $table->string("emailAddress");
             $table->date("dateOfBirth");
             $table->string("gender");
             $table->string("typeOfBirth");

@@ -55,6 +55,8 @@ class EntriesController extends Controller
             'motherFirstName' => 'required',
             'motherMiddleName' => 'required',
             'motherLastName' => 'required',
+            'phone'=> 'required',
+            'email'=> 'required|email',
             'fatherFirstName' => 'required',
             'fatherMiddleName' => 'required',
             'fatherLastName' => 'required',
@@ -63,6 +65,8 @@ class EntriesController extends Controller
             'typeOfBirth' => 'required',
             'natureOfBirth' => 'required',
         ]);
+
+
 
         $entries = new entry();
 
@@ -74,6 +78,8 @@ class EntriesController extends Controller
         $entries->motherLastName = $validated['motherLastName'];
         $entries->fatherFirstName = $validated['fatherFirstName'];
         $entries->fatherMiddleName = $validated['fatherMiddleName'];
+        $entries->parentNumber = $validated['phone'];
+        $entries->emailAddress = $validated['email'];
         $entries->fatherLastName = $validated['fatherLastName'];
         $entries->dateOfBirth = date('Y-m-d H:i:s',strtotime($validated['dateOfBirth']));
         $entries->gender = $validated['gender'];
@@ -83,8 +89,8 @@ class EntriesController extends Controller
         $entries->user_id = Auth::id();
         $entries->createdBy = Auth::id();
 
-//        dd($entries->hospital_id);
         $entries->save();
+
 
         Session::flash("message", "Hospital record was updated successfully!");
 

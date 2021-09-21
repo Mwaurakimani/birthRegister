@@ -173,6 +173,17 @@
             <div class="sub_form_2">
                 <h4>Sub Details</h4>
 
+                <div class="input_elem_holder" style="margin-top: 30px">
+                    <div class="form-group ">
+                        <label for="phone">Parent/Guardian Phone</label>
+                        <input id="phone" type="tel" type="text" class="form-control" name="phone"  value="{{ $Entry->parentNumber }}"   />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Parent/Guardian E-mail</label>
+                        <input id="email" type="email" type="text" class="form-control" name="email" value="value="{{ $Entry->emailAddress }}" />
+                    </div>
+                </div>
+
 
                 <div class="input_elem_holder">
                     <div class="form-group">
